@@ -66,7 +66,8 @@ def select(tabela:str,parametros:list):
         # Outras exceções inexperadas do python
         select_result=(f"Erro ao tentar selecionar dados: um erro inesperado com Python ocorreu: {e}")
     
-    print(select_result)
+    for c in select_result:
+            print(c)
     #Mostra o resultado, seja bem sucedido ou mostra o erro
 
 def delete(tabela:str,parametro:str,valor:str):
@@ -225,4 +226,5 @@ def update(tabela:str,colunas:list,valores:list,condicao:list,valor_condicao:lis
         update_result=("Um erro inesperado ocorreu ")
 
     print(update_result)
+
     #Mostra o resultado, seja bem sucedido ou mostra o erro
