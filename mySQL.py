@@ -50,9 +50,7 @@ def select(tabela:str,parametros:list):
     try:       
         banco.execute("SELECT "+', '.join(parametros)+" FROM "+tabela+";")
         select_result = banco.fetchall()
-        for c in select_result:
-            print(c)
-
+        
     except mysql.connector.Error as err:
         # Erros expecificos do MySQL Connector
         if err.errno == mysql.connector.errorcode.ER_ACCESS_DENIED_ERROR:
@@ -228,3 +226,4 @@ def update(tabela:str,colunas:list,valores:list,condicao:list,valor_condicao:lis
     print(update_result)
 
     #Mostra o resultado, seja bem sucedido ou mostra o erro
+
